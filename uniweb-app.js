@@ -60,6 +60,27 @@
     });*/
   }
 
+  let _url = "https://theme-dawn-demo.myshopify.com/pages/about.json";
+  const myHeaders = new Headers();
+  myHeaders.append(
+    "Cookie",
+    "_shopify_essential=:AZxpD_2rAAEAfULpmyIJLUCwPmtlZHA3mx-YiUd4Xfav4RvTISTM0VfyJQMf4L1-B1xGJvkqmNDy-uOouj60Vp1ljNqz-3KLEkzsIS-SF5Ni7ZTW20xarmJpIWwzOHTd3AiSMrzlsliQ03ptgwVeqOQoVoY3B6AIG_UEeJ02uIWhfH9DsbR5nQA7QETqL9kxE1qtbJUSvYy9UYWnOqeKYty12qqfJuWp2GRP_gbfrdx8AZVGnC43BReacvK0w98swL3OXHgFxWLVRe2vrK3Txgmy8bnXBZZaZqA7F9BUF30-sl3mEQ:; _shopify_s=de3c166a-ce53-44d1-a2ba-91bcd7cc7b45; _shopify_y=7f638714-9b70-424b-a4f4-1b39dbbf5bf2; cart_currency=CAD",
+  );
+
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch(
+    "https://theme-dawn-demo.myshopify.com/pages/about.json",
+    requestOptions,
+  )
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+
   /**** Update urls ****/
   document.addEventListener("DOMContentLoaded", (event) => {
     // Update urls on page load
